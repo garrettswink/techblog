@@ -1,0 +1,13 @@
+<div class="box">
+      <h1 class="title is-2">Tech Blog Posts</h1>
+
+        {{#each posts}}
+
+        <section class="section">
+          <h1 class="card-title"><a href="/post/{{id}}" class="text-dark title is-3">{{title}}</a></h1>
+          <h2 class="subtitle">
+            <p>Created by: {{user.username}} Date: {{format_date createdAt}}</p>
+        </section>
+      
+        {{/each}}
+      </div>

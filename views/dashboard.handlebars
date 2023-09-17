@@ -1,0 +1,19 @@
+<div class="box">
+  <h1 class="title is-1">Dashboard</h1>
+  <br>
+  <button class="button is-dark" a href="/newpost">New Post</button>
+  </div>
+  
+  <div class="box">
+    <h1 class="title is-3">Post History</h1>
+
+    {{#each posts}}
+    <div class="box">
+      <h2 class="title is-4"><a href="/post/{{id}}">{{title}}</a></h2>
+      <p>Created by: {{user.username}} | Date: {{format_date createdAt}}</p>
+      <button class="button is-warning"><a href="/editpost/{{id}}">Edit Post</a></button>
+      <button class="button is-danger delete-post" data-post-id="{{id}}">Delete Post</button>
+    </div>
+  {{/each}}
+
+  </div>
