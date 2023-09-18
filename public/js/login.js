@@ -1,4 +1,4 @@
-const LoginFormHandler = async (event) => {
+const logInFormHandler = async (event) => {
     event.preventDefault();
 
     const username = document.querySelector('#username-login').value.trim();
@@ -11,5 +11,14 @@ const LoginFormHandler = async (event) => {
             headers: { 'Content-Type': 'application/json'}
         });
         if (response.ok) {
-            
+            document.location.replace('/');
+        } else {
+            alert('Failed to log in');
+        }   
         }
+    }
+
+    const logInForm = document.querySelector('.login-form');
+    if (logInForm) {
+        logInForm.addEventListener('submit', logInFormHandler)
+    }
