@@ -8,7 +8,7 @@ const { Post, User, Comment } = require("../../models");
 router.get("/", async (req, res) => {
     try {
         const postData = await Post.findAll({
-            include: [{ model: User, attributes: ["username"] }];
+            include: [{ model: User, attributes: ["username"] }]
         })
         res.status(200).json(postData);
     } catch (err) {
